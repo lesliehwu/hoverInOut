@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Hover In/Out</title>
+		
+		<style>
+			body{
+				background-color:lightpink;
+			}
+		
+			img{
+				width:250px;
+				height:250px;
+				margin:10px;
+			}
+		</style>
+
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+		</script>
+
+		<script type="text/javascript">
+
+			$(document).ready(function(){
+
+				$("img").hover(function(){
+					$(this).attr("temp",$(this).attr("src"));
+					$(this).attr("src",$(this).attr("data-alt-src")),
+					$(this).attr("data-alt-src",$(this).attr("temp"));
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<img src="applejack.gif" alt="applejack and fluttershy" data-alt-src="fluttershy.gif" temp="" />
+		<img src="pinkie.gif" alt="pinkie pie and gummy" data-alt-src="gummy.gif" temp="" />
+		<img src="rainbow.gif" alt="rainbow dash and rarity" data-alt-src="rarity.gif" temp="" />
+		<img src="spike.gif" alt="spike and twilight sparkle" data-alt-src="twilight.gif" temp="" />
+	</body>
+</html>
